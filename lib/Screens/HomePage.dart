@@ -2,6 +2,10 @@ import 'package:flutter_app_quizz/Screens/QuizPage.dart';
 import 'package:flutter_app_quizz/Screens/QuizPageTwo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_quizz/Screens/QuizPageThree.dart';
+import 'package:flutter_app_quizz/Screens/QuizPageFour.dart';
+import 'package:flutter_app_quizz/Screens/QuizPageFive.dart';
+import 'package:flutter_app_quizz/Screens/QuizPageSix.dart';
+import 'package:flutter_app_quizz/Screens/QuizPageFour.dart';
 import 'package:flutter_app_quizz/Service/QuizManager.dart';
 import 'package:flutter_app_quizz/Screens/ResultPage.dart';
 import 'package:flutter_app_quizz/Service/Question.dart';
@@ -22,6 +26,21 @@ void gotoQuizPageTwo(BuildContext context) {
 void gotoQuizPageThree(BuildContext context) {
   Navigator.of(context).push(
     MaterialPageRoute(builder: (context) => QuizPageThree()),
+  );
+}
+void gotoQuizPageFour(BuildContext context) {
+  Navigator.of(context).push(
+    MaterialPageRoute(builder: (context) => QuizPageFour()),
+  );
+}
+void gotoQuizPageSix(BuildContext context) {
+  Navigator.of(context).push(
+    MaterialPageRoute(builder: (context) => QuizPageSix()),
+  );
+}
+void gotoQuizPageFive(BuildContext context) {
+  Navigator.of(context).push(
+    MaterialPageRoute(builder: (context) => QuizPageFive()),
   );
 }
 // void gotoQuizPage(BuildContext context) {
@@ -98,7 +117,7 @@ class HomePageState extends State<HomePage> {
              height: 70,
            ),
            SizedBox(
-             height: 70,
+             height: 10,
            ),
            Column(
              crossAxisAlignment: CrossAxisAlignment.center,
@@ -119,7 +138,7 @@ class HomePageState extends State<HomePage> {
                    ),),
                ),
                SizedBox(
-                 height: 70,
+                 height: 10,
                ),
                RaisedButton(
                  color: Colors.blueAccent,
@@ -135,7 +154,7 @@ class HomePageState extends State<HomePage> {
                    ),),
                ),
                SizedBox(
-                 height: 70,
+                 height: 10,
                ),
                RaisedButton(
                  color: Colors.blueAccent,
@@ -147,6 +166,63 @@ class HomePageState extends State<HomePage> {
                    // incrementCounter(),
                  },
                  child: Text('Game category 15 hard',
+                   style: TextStyle(
+                     fontSize: 25,
+
+                     // letterSpacing: 1,
+                   ),),
+               ),
+               SizedBox(
+                 height: 10,
+               ),
+               RaisedButton(
+                 color: Colors.greenAccent,
+                 onPressed: () =>   {
+                   gotoQuizPageFour(context),
+                   // setState(() {
+                   //   add =5;
+                   // }),
+                   // incrementCounter(),
+                 },
+                 child: Text('Art category 5 easy',
+                   style: TextStyle(
+                     fontSize: 25,
+
+                     // letterSpacing: 1,
+                   ),),
+               ),
+               SizedBox(
+                 height: 10,
+               ),
+               RaisedButton(
+                 color: Colors.greenAccent,
+                 onPressed: () =>   {
+                   gotoQuizPageFive(context),
+                   // setState(() {
+                   //   add =5;
+                   // }),
+                   // incrementCounter(),
+                 },
+                 child: Text('Art category 7 medium',
+                   style: TextStyle(
+                     fontSize: 25,
+
+                     // letterSpacing: 1,
+                   ),),
+               ),
+               SizedBox(
+                 height: 10,
+               ),
+               RaisedButton(
+                 color: Colors.greenAccent,
+                 onPressed: () =>   {
+                   gotoQuizPageSix(context),
+                   // setState(() {
+                   //   add =5;
+                   // }),
+                   // incrementCounter(),
+                 },
+                 child: Text('Art category 8 hard',
                    style: TextStyle(
                      fontSize: 25,
 

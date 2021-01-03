@@ -4,11 +4,11 @@ import 'package:flutter_app_quizz/Service/QuizManager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_quizz/Screens/HomePage.dart';
 import 'package:html_unescape/html_unescape.dart';
-class QuizPageFour extends StatefulWidget {
+class QuizPageFive extends StatefulWidget {
   @override
-  QuizPageFourState createState() => QuizPageFourState();
+  QuizPageFiveState createState() => QuizPageFiveState();
 }
-class QuizPageFourState extends State<QuizPageFour> {
+class QuizPageFiveState extends State<QuizPageFive> {
   QuizManager _manager = QuizManager();
   HomePageState levell = HomePageState();
   Future<void> quizloader;
@@ -51,7 +51,7 @@ class QuizPageFourState extends State<QuizPageFour> {
     print(levell.incrementCounter());
     // TODO: implement initState
     //  super.initState();
-    quizloader = _manager.LoadQuestions(5,25,'easy');
+    quizloader = _manager.LoadQuestions(7,25,'medium');
   }
   @override
   Widget build(BuildContext context) {
