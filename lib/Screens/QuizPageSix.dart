@@ -57,43 +57,49 @@ class QuizPageSixState extends State<QuizPageSix> {
   Widget build(BuildContext context) {
     var unescape = HtmlUnescape();
     return Scaffold(
-        appBar: AppBar(
-          title: Text(
-              'Questions ${_manager.getCurrentId()}/${_manager.totalQuestionNumber()}'),
-        ),
+        // appBar: AppBar(
+        //   title: Text(
+        //       'Questions ${_manager.getCurrentId()}/${_manager.totalQuestionNumber()}'),
+        // ),
         body: FutureBuilder<void>(
             future: quizloader,
             builder: (BuildContext context, AsyncSnapshot<void> snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
-                return Container(
-                  padding: EdgeInsets.all(10),
-                  child: Column(
-                    children: [
-                      Expanded(
-                        flex: 2,
-                        child: Container(
-                          height: 30,
-                          padding: EdgeInsets.symmetric(vertical: 30),
-                          child: Text(
-                            unescape.convert('${_manager.getCurrentQuestion().text}'),
-                            style: TextStyle(
-                              fontSize: 15,
+                return Scaffold(
+                  appBar: AppBar(
+                    title: Text(
+                        'Questions ${_manager.getCurrentId()}/${_manager.totalQuestionNumber()}'),
+                  ),
+                  body: Container(
+                    padding: EdgeInsets.all(10),
+                    child: Column(
+                      children: [
+                        Expanded(
+                          flex: 2,
+                          child: Container(
+                            height: 30,
+                            padding: EdgeInsets.symmetric(vertical: 30),
+                            child: Text(
+                              unescape.convert('${_manager.getCurrentQuestion().text}'),
+                              style: TextStyle(
+                                fontSize: 15,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      Expanded(
-                        flex: 8,
-                        child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: getOptions(_manager.getCurrentQuestion()),
+                        Expanded(
+                          flex: 8,
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: getOptions(_manager.getCurrentQuestion()),
+                            ),
                           ),
-                        ),
-                      )
-                    ],
+                        )
+                      ],
+                    ),
                   ),
                 );
               } else {
