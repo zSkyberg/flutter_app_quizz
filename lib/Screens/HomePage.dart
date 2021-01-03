@@ -118,6 +118,9 @@ class HomePageState extends State<HomePage> {
                      // letterSpacing: 1,
                    ),),
                ),
+               SizedBox(
+                 height: 70,
+               ),
                RaisedButton(
                  color: Colors.blueAccent,
                  onPressed: () {
@@ -130,6 +133,9 @@ class HomePageState extends State<HomePage> {
                      fontSize: 25,
                      // letterSpacing: 1,
                    ),),
+               ),
+               SizedBox(
+                 height: 70,
                ),
                RaisedButton(
                  color: Colors.blueAccent,
@@ -148,9 +154,6 @@ class HomePageState extends State<HomePage> {
                    ),),
                ),
              ],
-           ),
-           SizedBox(
-             height: 70,
            ),
 
            // RaisedButton(
