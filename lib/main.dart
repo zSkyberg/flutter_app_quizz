@@ -1,8 +1,12 @@
 import 'package:flutter_app_quizz/Screens/QuizPage.dart';
 import 'Screens/HomePage.dart';
 import 'package:flutter/material.dart';
+import 'package:html_unescape/html_unescape.dart';
 
 void main() {
+  var unescape = HtmlUnescape();
+  print(unescape.convert('&lt;strong&#62;This &quot;escaped&quot; string '
+      'will be printed normally.</strong>'));
   runApp(MyApp());
 }
 
